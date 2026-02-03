@@ -1,24 +1,13 @@
-import { useEffect, useMemo, useState } from 'react'
-import { useSettings } from '../context/SettingsContext'
+import { useState } from 'react'
 
 export const BrandLogo = () => {
   const [useFallback, setUseFallback] = useState(false)
-  const { settings } = useSettings()
-
-  const logoSrc = useMemo(
-    () => (settings.theme === 'dark' ? '/cognitivia-dark.png' : '/cognitivia-light.png'),
-    [settings.theme],
-  )
-
-  useEffect(() => {
-    setUseFallback(false)
-  }, [logoSrc])
 
   return (
     <div className="logo-frame flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl shadow-lg">
       {!useFallback ? (
         <img
-          src={logoSrc}
+          src="/cognitivia-logo.png"
           alt="Cognitivia logo"
           className="logo-image h-full w-full object-contain"
           onError={() => setUseFallback(true)}

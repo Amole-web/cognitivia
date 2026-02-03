@@ -1,4 +1,17 @@
-import { Button, Card, Input, Label, Radio, RadioGroup, TextField } from '@heroui/react'
+import {
+  Button,
+  Card,
+  Disclosure,
+  DisclosureBody,
+  DisclosureContent,
+  DisclosureIndicator,
+  DisclosureTrigger,
+  Input,
+  Label,
+  Radio,
+  RadioGroup,
+  TextField,
+} from '@heroui/react'
 import { ThemeToggle } from '../components/ThemeToggle'
 import { useState } from 'react'
 import { resetAllData } from '../data/db'
@@ -83,6 +96,27 @@ export const Settings = () => {
             <Label>API Key</Label>
             <Input type="password" />
           </TextField>
+          <div className="md:col-span-2">
+            <Disclosure className="mt-1 rounded-2xl border border-white/10 bg-white/5 p-3">
+              <DisclosureTrigger className="flex w-full items-center justify-between text-xs text-[color:var(--fg-muted)]">
+                <span>Don't have an API key?</span>
+                <DisclosureIndicator />
+              </DisclosureTrigger>
+              <DisclosureContent>
+                <DisclosureBody className="mt-3 space-y-2 text-xs text-[color:var(--fg-muted)]">
+                  <div>
+                    <span className="text-[color:var(--fg)]">OpenRouter (recommended)</span>: create
+                    an account, open the API keys page, and generate a new key.
+                  </div>
+                  <div>
+                    <span className="text-[color:var(--fg)]">OpenAI</span>: log in, go to API Keys,
+                    and create a new secret key.
+                  </div>
+                  <div>Note: your key is stored only in this browser (localStorage).</div>
+                </DisclosureBody>
+              </DisclosureContent>
+            </Disclosure>
+          </div>
           <TextField
             value={settings.model}
             onChange={(value: string) => updateSettings({ model: value })}

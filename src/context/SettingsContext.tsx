@@ -56,15 +56,6 @@ export const SettingsProvider: React.FC<React.PropsWithChildren> = ({ children }
       root.classList.remove('dark')
     }
 
-    const iconHref = settings.theme === 'dark' ? '/cognitivia-dark.png' : '/cognitivia-light.png'
-    const iconLink = document.querySelector('link[rel="icon"]') as HTMLLinkElement | null
-    if (iconLink) {
-      iconLink.href = iconHref
-    }
-    const appleLink = document.querySelector('link[rel="apple-touch-icon"]') as HTMLLinkElement | null
-    if (appleLink) {
-      appleLink.href = iconHref
-    }
   }, [settings])
 
   const value = useMemo(

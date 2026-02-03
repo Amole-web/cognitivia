@@ -20,7 +20,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
       <div className="pointer-events-none absolute inset-0 opacity-30">
         <div className="floating-grid h-full w-full" />
       </div>
-      <header className="glass-panel sticky-header flex flex-wrap items-center gap-4 border-b border-white/10 px-6 py-4">
+      <header className="glass-panel sticky-header flex flex-wrap items-center gap-4 border-b border-white/10 px-6 py-4 md:grid md:grid-cols-[auto_1fr_auto] md:gap-6">
         <div className="flex items-center gap-3">
           <BrandLogo />
           <div>
@@ -30,7 +30,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
             </div>
           </div>
         </div>
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center justify-center gap-6 md:flex">
           <NavLink to="/" className={navLinkClass}>
             Dashboard
           </NavLink>
@@ -41,7 +41,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
             Settings
           </NavLink>
         </nav>
-        <div className="ml-auto flex flex-wrap items-center justify-end gap-3">
+        <div className="flex flex-wrap items-center justify-end gap-3 md:justify-self-end">
           <ThemeToggle compact />
           <Button
             variant="secondary"
