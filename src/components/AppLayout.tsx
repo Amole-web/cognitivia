@@ -41,7 +41,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
             Settings
           </NavLink>
         </nav>
-        <div className="flex flex-wrap items-center justify-end gap-3 md:justify-self-end">
+        <div className="ml-auto flex flex-wrap items-center justify-end gap-3 md:ml-0 md:justify-self-end">
           <ThemeToggle compact />
           <Button
             variant="secondary"
