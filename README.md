@@ -1,4 +1,4 @@
-# Cognitivia (Frontend-only BYOK Study Assistant)
+#oyonova (Frontend-only BYOK Study Assistant)
 
 Cognitivia is a frontend-only web app that helps you turn notes into flashcards and quizzes, run study sessions, and track progress over time. Everything runs in the browser with local persistence.
 
